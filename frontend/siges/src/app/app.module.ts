@@ -3,6 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { AcademicPeriodListComponent } from './components/academic-period-list/academic-period-list.component';
+import {AcademicPeriodService} from './services/academic-period.service';
+
+import {HttpClientModule} from '@angular/common/http'; 
+
 
 @NgModule({
   declarations: [
@@ -10,9 +14,10 @@ import { AcademicPeriodListComponent } from './components/academic-period-list/a
     AcademicPeriodListComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule, 
+    HttpClientModule
   ],
-  providers: [],
+  providers: [AcademicPeriodService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
