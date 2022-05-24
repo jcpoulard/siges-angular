@@ -1,3 +1,20 @@
-<p *ngFor="let tmpAcademicPeriod of academicPeriods">
-    {{tmpAcademicPeriod.namePeriod}} : {{tmpAcademicPeriod.dateStart}}
-</p>
+<table class="table">
+
+    <thead class="thead-dark">
+        <tr>
+            <th>Period name</th>
+            <th>Date start</th>
+            <th>Date end</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let tmpAcademicPeriod of academicPeriods">
+            <td>
+                {{tmpAcademicPeriod.namePeriod}}
+            </td>
+            <td>{{tmpAcademicPeriod.dateStart | date: 'mediumDate' }}</td>
+            <td>{{tmpAcademicPeriod.dateEnd | date: 'mediumDate' }}</td>
+        </tr>
+    </tbody>
+</table>
